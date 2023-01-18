@@ -1,0 +1,45 @@
+@import 'src/styles/style';
+
+.ctx {
+  background-color: transparent;
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: $nav-text;
+  display: flex;
+  gap: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 16px;
+  border: none;
+  path {
+    fill: $blue-20;
+  }
+  @include media-min-width(980) {
+    font-weight: 500;
+  }
+}
+
+.blue {
+  background-color: $blue;
+  color: $white;
+  padding: 16px 24px;
+  path {
+    fill: $white;
+  }
+}
+
+.orange {
+  background-color: $orange;
+  color: $white;
+  padding: 16px 24px;
+  path {
+    fill: $white;
+  }
+}
+
+.white {
+  background-color: $white;
+  color: $nav-text;
+  padding: 16px 24px;
+}

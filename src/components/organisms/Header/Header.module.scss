@@ -1,0 +1,109 @@
+@import 'src/styles/style';
+
+.ctx {
+  background-color: $standard-grey;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  transition: 300ms;
+  border-bottom: 1px solid $white;
+  position: relative;
+  @include media-min-width(980) {
+    height: 83px;
+  }
+}
+
+.active {
+  border-bottom: 1px solid $border;
+}
+
+.modal {
+  position: absolute;
+  top: 61px;
+  left: 0;
+  height: calc(100vh - 61px);
+  width: 100vw;
+  background-color: $standard-grey;
+  transition: 500ms;
+  visibility: visible;
+  opacity: 1;
+  &__hide {
+    opacity: 0;
+    visibility: hidden;
+    left: -1000px;
+  }
+  &__login {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    border-bottom: 1px solid $border;
+  }
+  &__title {
+    @include standard-text-500;
+    color: $nav-text;
+  }
+  &__buttons {
+    display: flex;
+    gap: 13px;
+    flex-direction: column;
+    @include media-min-width(400) {
+      flex-direction: row;
+    }
+  }
+  @include media-min-width(980) {
+    display: none;
+  }
+}
+
+.nav {
+  display: none;
+  @include media-min-width(980) {
+    display: block;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  @include standard-text-400;
+  color: $nav-text;
+  &__mobile {
+    flex-direction: column;
+  }
+  &__link {
+    color: $nav-text;
+    text-decoration: none;
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 30px;
+      content: '';
+      opacity: 0;
+      width: 0;
+      left: 0;
+      transition: 500ms;
+    }
+    &:hover {
+      &:before {
+        opacity: 1;
+        width: 36px;
+        height: 2px;
+        background-color: $blue;
+        left: calc(50% - 18px);
+      }
+    }
+  }
+}
+
+.login {
+  display: none;
+  @include media-min-width(980) {
+    display: flex;
+    gap: 32px;
+    @include standard-text-500;
+    color: $nav-text;
+  }
+}
